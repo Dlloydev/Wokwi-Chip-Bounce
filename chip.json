@@ -1,0 +1,30 @@
+{
+  "name": "Bounce",
+  "author": "dlloydev",
+  "license": "MIT",
+  "docs": "https://github.com/Dlloydev/Wokwi-Chip-Bounce/blob/main/docs/README.md",
+  "pins": [
+    "GND",
+    "VCC",
+    "OUT",
+    "IN"
+  ],
+  "controls": [
+    {
+      "id": "mode",
+      "label": "⓿Off ❶Rise ❷Fall ❸Both",
+      "type": "range",
+      "min": 0,
+      "max": 3,
+      "step": 1
+    },
+    {
+      "id": "duration",
+      "label": "Microseconds",
+      "type": "range",
+      "min": 16,
+      "max": 5000,
+      "step": 1
+    }
+  ]
+}
