@@ -4,7 +4,7 @@ This custom chip for [Wokwi](https://wokwi.com/) adds a Bounce pattern to a digi
 
 - Modes: Off, Rise, Fall, Both (0-3)
 
-- Duration: 16-5000 microseconds
+- Duration: 100-5000 microseconds
 
 ## Pin names
 
@@ -20,7 +20,7 @@ To use this chip in your project, include it as a dependency in your `diagram.js
 
 ```json
   "dependencies": {
-    "chip-pwm": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.0"
+    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.1"
   }
 ```
 
@@ -29,7 +29,7 @@ Then, add the chip to your circuit by adding a `chip-bounce` item to the `parts`
 ```json
   "parts": {
     ...,
-    { "type": "chip-bounce", "id": "chip1" }
+    { "type": "chip-bounce", "id": "bounce1" }
   },
 ```
 

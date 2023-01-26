@@ -3,25 +3,25 @@
   "author": "Dlloydev",
   "editor": "wokwi",
   "parts": [
-    { "type": "chip-bounce", "id": "chip1", "top": -75.78, "left": -139.2, "attrs": {} },
-    { "type": "chip-pwm", "id": "chip2", "top": -121.12, "left": -139.2, "attrs": {} },
+    { "type": "chip-bounce", "id": "bounce1", "top": -75.78, "left": -139.2, "attrs": {} },
+    { "type": "chip-pwm", "id": "pwm1", "top": -121.12, "left": -139.2, "attrs": {} },
     { "type": "wokwi-logic-analyzer", "id": "logic1", "top": -76.45, "left": 0, "attrs": {} },
     { "type": "wokwi-vcc", "id": "pwr2", "top": -152.84, "left": -172.8, "attrs": {} },
     { "type": "wokwi-gnd", "id": "gnd4", "top": 19.2, "left": -163.8, "attrs": {} }
   ],
   "connections": [
-    [ "chip1:IN", "logic1:D0", "purple", [ "h0" ] ],
-    [ "chip1:OUT", "logic1:D1", "blue", [ "h0" ] ],
-    [ "gnd4:GND", "chip1:RISE", "green", [ "v0" ] ],
-    [ "chip1:GND", "gnd4:GND", "black", [ "h0" ] ],
-    [ "chip1:GND", "chip2:GND", "black", [ "h-19.2", "v-38.4" ] ],
-    [ "chip1:VCC", "chip2:VCC", "red", [ "h-28.8", "v-57.6" ] ],
-    [ "pwr2:VCC", "chip2:VCC", "red", [ "v0" ] ],
-    [ "chip2:OUT", "chip1:IN", "purple", [ "h11.41", "v38.4" ] ],
+    [ "bounce1:IN", "logic1:D0", "purple", [ "h0" ] ],
+    [ "bounce1:OUT", "logic1:D1", "blue", [ "h0" ] ],
+    [ "gnd4:GND", "bounce1:RISE", "green", [ "v0" ] ],
+    [ "bounce1:GND", "gnd4:GND", "black", [ "h0" ] ],
+    [ "bounce1:GND", "pwm1:GND", "black", [ "h-19.2", "v-38.4" ] ],
+    [ "bounce1:VCC", "pwm1:VCC", "red", [ "h-28.8", "v-57.6" ] ],
+    [ "pwr2:VCC", "pwm1:VCC", "red", [ "v0" ] ],
+    [ "pwm1:OUT", "bounce1:IN", "purple", [ "h11.41", "v38.4" ] ],
     [ "logic1:GND", "gnd4:GND", "black", [ "h0" ] ]
   ],
   "dependencies": {
-    "chip-pwm": "github:Dlloydev/Wokwi-Chip-PWM@1.0.0",
-    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.0"
+    "chip-pwm": "github:Dlloydev/Wokwi-Chip-PWM@1.0.2",
+    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.1"
   }
 }

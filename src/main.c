@@ -20,7 +20,7 @@ void chip_init(void) {
   chip->pin_in = pin_init("IN", INPUT);
   chip->pin_out = pin_init("OUT", OUTPUT);
   chip->mode_attr = attr_init("mode", 3);
-  chip->duration_attr = attr_init("duration", 1000);
+  chip->duration_attr = attr_init("duration", 100);
 
   const pin_watch_config_t both = {
     .edge = BOTH,
@@ -34,7 +34,7 @@ void chip_init(void) {
     .user_data = chip,
   };
   timer_t timer_id = timer_init(&timer_config);
-  timer_start(timer_id, 1, true);
+  timer_start(timer_id, 10, true);
 }
 
 static void chip_timer_event(void *user_data) {

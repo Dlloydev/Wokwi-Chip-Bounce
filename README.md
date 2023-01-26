@@ -11,7 +11,7 @@ Add Bounce to digital signals
 
 - Modes: Off, Rise, Fall, Both (0-3)
 
-- Duration: 16-5000 microseconds
+- Duration: 100-5000 microseconds
 
   
 
