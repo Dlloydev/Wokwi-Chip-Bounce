@@ -47,7 +47,7 @@ static void chip_timer_event(void *user_data) {
 }
 
 static void chip_pin_change(void *user_data, pin_t pin, uint32_t value) {
-  printf("Pin change: %d %d\n", pin, value);
+  //printf("Pin change: %d %d\n", pin, value);
   chip_state_t *chip = (chip_state_t*)user_data;
   if(attr_read(chip->mode_attr) == 1 && value) chip->bounce = get_sim_nanos();
   else if(attr_read(chip->mode_attr) == 2 && !value) chip->bounce = get_sim_nanos();

@@ -22,6 +22,6 @@
   ],
   "dependencies": {
     "chip-pwm": "github:Dlloydev/Wokwi-Chip-PWM@1.0.2",
-    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.1"
+    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.2"
   }
 }
