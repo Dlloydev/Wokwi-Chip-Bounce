@@ -3,18 +3,16 @@
   "author": "Dlloydev",
   "editor": "wokwi",
   "parts": [
-    { "type": "chip-bounce", "id": "chip1", "top": -46.98, "left": -81.6, "attrs": {} },
-    { "type": "chip-pwm", "id": "chip2", "top": -46.98, "left": -223.79, "attrs": {} },
+    { "type": "chip-bounce", "id": "bounce1", "top": -46.98, "left": -81.6, "attrs": {} },
+    { "type": "chip-pwm", "id": "pwm1", "top": -46.98, "left": -223.79, "attrs": {} },
     { "type": "wokwi-logic-analyzer", "id": "logic1", "top": -66.85, "left": 67.2, "attrs": {} },
     { "type": "wokwi-gnd", "id": "gnd4", "top": 28.8, "left": 47.4, "attrs": {} }
   ],
   "connections": [
-    [ "gnd4:GND", "chip1:RISE", "green", [ "v0" ] ],
     [ "logic1:GND", "gnd4:GND", "black", [ "h0" ] ],
-    [ "chip2:GND", "chip1:GND", "black", [ "v-19.2", "h48" ] ],
-    [ "chip2:OUT", "chip1:IN", "blue", [ "v0" ] ],
-    [ "chip1:OUT", "logic1:D1", "purple", [ "v0", "h21.01", "v-19.2" ] ],
-    [ "chip2:OUT", "logic1:D0", "blue", [ "v0", "h19.2", "v-28.8" ] ]
+    [ "pwm1:OUT", "bounce1:IN", "blue", [ "v0" ] ],
+    [ "bounce1:OUT", "logic1:D1", "purple", [ "v0", "h21.01", "v-19.2" ] ],
+    [ "pwm1:OUT", "logic1:D0", "blue", [ "v0", "h19.2", "v-28.8" ] ]
   ],
   "dependencies": {
     "chip-pwm": "github:Dlloydev/Wokwi-Chip-PWM@1.0.3",
