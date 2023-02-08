@@ -10,9 +10,8 @@ This custom chip for [Wokwi](https://wokwi.com/) adds a Bounce pattern to a digi
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
+| IN   | Signal input                                                 |
 | OUT  | Signal output with bounce depending upon mode and duration settings |
-| GND  | Ground                                                       |
-| VCC  | Supply voltage                                               |
 
 ## Usage
 
