@@ -5,10 +5,10 @@
   "license": "MIT",
   "docs": "https://github.com/Dlloydev/Wokwi-Chip-Bounce/blob/main/docs/README.md",
   "pins": [
-    "VCC",
-    "GND",
+    "",
     "IN",
-    "OUT"
+    "OUT",
+    ""
   ],
   "controls": [
     {
