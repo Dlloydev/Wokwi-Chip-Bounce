@@ -20,7 +20,7 @@ To use this chip in your project, include it as a dependency in your `diagram.js
 
 ```json
   "dependencies": {
-    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.3"
+    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.4"
   }
 ```
 
