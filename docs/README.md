@@ -19,7 +19,7 @@ Add Bounce to digital signals
 To use this chip in your project, include it as a dependency in your `diagram.json` file:
 
 ```json
-"dependencies": { "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.5" }
+"dependencies": { "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.6" }
 ```
 
 Then, add the chip to your circuit by adding a `chip-scope` item to the `parts` section of `diagram.json`:

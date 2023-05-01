@@ -1,4 +1,4 @@
-// Bounce Chip v1.0.5 by David Lloyd
+// Bounce Chip v1.0.6 by David Lloyd
 
 #include "wokwi-api.h"
 #include <stdio.h>
@@ -14,6 +14,7 @@ typedef struct {
   uint32_t microseconds_attr;
   uint32_t microseconds;
   uint16_t bounce;
+  bool inputChanged;
   timer_t timer;
 } chip_state_t;
 
@@ -54,7 +55,10 @@ void chip_init(void) {
 
 static void chip_timer_event(void *user_data) {
   chip_state_t *chip = (chip_state_t*)user_data;
-  pin_write(chip->pin_out, (chip->bounce & 1) ^ pin_read(chip->pin_in));
+  if(chip->inputChanged) {
+  pin_write(chip->pin_out, pin_read(chip->pin_in));
+  chip->inputChanged = false;
+  } else pin_write(chip->pin_out, (chip->bounce & 1) ^ pin_read(chip->pin_in));
   chip->bounce >>= 1;
   static uint8_t count;
   count++;
@@ -66,4 +70,5 @@ static void chip_pin_change(void *user_data, pin_t pin, uint32_t value) {
   if(attr_read(chip->Mode_attr) == 1 && value) chip->bounce = get_sim_nanos();
   else if(attr_read(chip->Mode_attr) == 2 && !value) chip->bounce = get_sim_nanos();
   else if(attr_read(chip->Mode_attr) == 3) chip->bounce = get_sim_nanos();
+  chip->inputChanged = true;
 }
