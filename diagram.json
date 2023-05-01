@@ -3,19 +3,46 @@
   "author": "Dlloydev",
   "editor": "wokwi",
   "parts": [
-    { "type": "chip-bounce", "id": "bounce1", "top": -46.98, "left": -81.6, "attrs": {} },
-    { "type": "chip-pwm", "id": "pwm1", "top": -46.98, "left": -223.79, "attrs": {} },
-    { "type": "wokwi-logic-analyzer", "id": "logic1", "top": -66.85, "left": 67.2, "attrs": {} },
-    { "type": "wokwi-gnd", "id": "gnd4", "top": 28.8, "left": 47.4, "attrs": {} }
+    {
+      "type": "chip-bounce",
+      "id": "bounce1",
+      "top": -8.58,
+      "left": -91.2,
+      "attrs": { "mode": "3", "microseconds": "1000" }
+    },
+    {
+      "type": "chip-pwm",
+      "id": "pwm1",
+      "top": -8.58,
+      "left": -233.39,
+      "attrs": { "coefficientHz": "10", "exponentHz": "1", "duty": "50" }
+    },
+    {
+      "type": "chip-scope",
+      "id": "scope1",
+      "top": -8.58,
+      "left": 52.8,
+      "attrs": {
+        "sampleTimeUs": "100",
+        "sampleTimeMs": "0",
+        "triggerChannel": "0",
+        "triggerMode": "1",
+        "crtColor": "0",
+        "trace0Color": "14",
+        "trace1Color": "12",
+        "trace2Color": "10",
+        "trace3Color": "2"
+      }
+    }
   ],
   "connections": [
-    [ "logic1:GND", "gnd4:GND", "black", [ "h0" ] ],
-    [ "pwm1:OUT", "bounce1:IN", "blue", [ "v0" ] ],
-    [ "bounce1:OUT", "logic1:D1", "purple", [ "v0", "h21.01", "v-19.2" ] ],
-    [ "pwm1:OUT", "logic1:D0", "blue", [ "v0", "h19.2", "v-28.8" ] ]
+    [ "pwm1:OUT", "bounce1:IN", "orange", [ "v0" ] ],
+    [ "bounce1:OUT", "scope1:D1", "purple", [ "v0", "h11.41", "v38.4" ] ],
+    [ "pwm1:OUT", "scope1:D0", "orange", [ "h19.2", "v-28.8", "h144", "v19.2" ] ]
   ],
   "dependencies": {
-    "chip-pwm": "github:Dlloydev/Wokwi-Chip-PWM@1.0.3",
-    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.4"
+    "chip-pwm": "github:Dlloydev/Wokwi-Chip-PWM@1.0.5",
+    "chip-bounce": "github:Dlloydev/Wokwi-Chip-Bounce@1.0.5",
+    "chip-scope": "github:Dlloydev/Wokwi-Chip-Scope@1.0.7"
   }
 }
